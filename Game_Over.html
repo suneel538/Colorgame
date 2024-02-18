@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameOver</title>
+    <script src="Game_start.js"></script>
+    <style>
+        .over{
+            text-align: center;
+            margin: auto;
+            padding: 0px;
+            justify-content: center;
+        }
+        table,td,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 6px;
+        }
+        .scoretable{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+        button {
+            cursor: pointer;
+            background-color: rgb(221, 207, 14);
+            color: black;
+            margin: 8px;
+            height: 30px;
+            width: fit-content;
+            border: 2px solid black;
+            border-radius: 10px;
+            transition: all 0.4s ease 0s;
+        }
+        
+        button:hover {
+            box-shadow: 0px 5px 40px -10px rgba(233, 21, 6, 0.57); 
+           -moz-box-shadow: 0px 5px 40px -10px rgba(133, 121, 121, 0.57);
+            transition: all 0.4s ease 0s;
+        }
+        button:hover{
+            text-shadow: 2px 2px 5px red;
+            
+        }
+        th{
+            background-color: red;
+        }
+        table{
+            background-color: antiquewhite;
+        }
+        .ov {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 20px auto;
+            width: 700px;
+            height: 500px;
+            background: white;
+            border-radius: 75px;
+            transition: 1s box-shadow;
+          }
+          
+          .ov:hover {
+            box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+          }
+          
+          .ov:hover::before, div:hover::after {
+            display: flex;
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 500px;
+            background: #FDA8CF;
+            border-radius: 75px;
+            z-index: -1;
+            animation: 1s clockwise infinite;
+          }
+          
+          .over:hover:after {
+            background: #F3CE5E;
+            animation: 2s counterclockwise infinite;
+          }
+          
+          @keyframes clockwise {
+            0% {
+              top: -5px;
+              left: 0;
+            }
+            12% {
+              top: -2px;
+              left: 2px;
+            }
+            25% {
+              top: 0;
+              left: 5px;    
+            }
+            37% {
+              top: 2px;
+              left: 2px;
+            }
+            50% {
+              top: 5px;
+              left: 0;    
+            }
+            62% {
+              top: 2px;
+              left: -2px;
+            }
+            75% {
+              top: 0;
+              left: -5px;
+            }
+            87% {
+              top: -2px;
+              left: -2px;
+            }
+            100% {
+              top: -5px;
+              left: 0;    
+            }
+          }
+          
+          @keyframes counterclockwise {
+            0% {
+              top: -5px;
+              right: 0;
+            }
+            12% {
+              top: -2px;
+              right: 2px;
+            }
+            25% {
+              top: 0;
+              right: 5px;    
+            }
+            37% {
+              top: 2px;
+              right: 2px;
+            }
+            50% {
+              top: 5px;
+              right: 0;    
+            }
+            62% {
+              top: 2px;
+              right: -2px;
+            }
+            75% {
+              top: 0;
+              right: -5px;
+            }
+            87% {
+              top: -2px;
+              right: -2px;
+            }
+            100% {
+              top: -5px;
+              right: 0;    
+            }
+          }
+
+
+
+
+          @media only screen and (min-width: 1024px) {
+            /* Desktop/laptop styles */
+        }
+        
+        /* Styles for tablets */
+        @media only screen and (max-width: 1023px) {
+            /* Tablet styles */
+        }
+        
+        /* Styles for mobile phones */
+        @media only screen and (max-width: 767px) {
+            /* Mobile styles */
+        }
+
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="ov">
+    <div class="over">
+    <h2>Game Over</h3>
+    <h3><span id="playerName"></span></h3>
+    <h3>Score: <span id="score"></span></h3>
+    <p>your final score is: <span id="final"></span></p>
+    
+    <button type="button" onclick="newgame()" id="start">New Game</button>
+    <button type="button" onclick="restart()" id="restart">Restart Game</button>
+    
+    <h4>Top Players</h4>
+    <div class="scoretable">
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Suneel</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Naveen</td>
+            <td>132</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Rajesh</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Venkatesh</td>
+            <td>78</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Karthik</td>
+            <td>54</td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    </div>
+    <script>
+        
+        const _0x157120=_0x5f5d;function _0x5f5d(_0x471add,_0x588bf2){const _0x16252f=_0x1625();
+            return _0x5f5d=function(_0x5f5d66,_0x3d7685){_0x5f5d66=_0x5f5d66-0x18b;let _0x563fb8=_0x16252f[_0x5f5d66];
+                return _0x563fb8;},_0x5f5d(_0x471add,_0x588bf2);}(function(_0x3f4376,_0x3c40b2){const _0x2be234=_0x5f5d,_0x3d5f60=_0x3f4376();
+                    while(!![]){try{const _0x5003b2=-parseInt(_0x2be234(0x1a5))/0x1+-parseInt(_0x2be234(0x196))/0x2+-parseInt(_0x2be234(0x194))/0x3*(parseInt(_0x2be234(0x19d))/0x4)+-parseInt(_0x2be234(0x1aa))/0x5*(-parseInt(_0x2be234(0x191))/0x6)+parseInt(_0x2be234(0x1a3))/0x7+parseInt(_0x2be234(0x18b))/0x8*(parseInt(_0x2be234(0x19b))/0x9)+-parseInt(_0x2be234(0x1a8))/0xa;
+                        if(_0x5003b2===_0x3c40b2)break;else _0x3d5f60['push'](_0x3d5f60['shift']());
+                }catch(_0x1dbc5e){_0x3d5f60['push'](_0x3d5f60['shift']());}}}(_0x1625,0x82b89),document[_0x157120(0x198)](_0x157120(0x18e))[_0x157120(0x1ae)]('click',function newgame(){const _0x44789a=_0x157120;
+                        localStorage[_0x44789a(0x18d)](_0x44789a(0x19e)),window[_0x44789a(0x1a6)](_0x44789a(0x1a4),_0x44789a(0x18f));
+                    }),document[_0x157120(0x198)](_0x157120(0x18c))['addEventListener'](_0x157120(0x190),function restart(){const _0x51c4e3=_0x157120;
+                            localStorage[_0x51c4e3(0x19f)](),window[_0x51c4e3(0x1a6)]('Game_Start.html',_0x51c4e3(0x18f));}));function updateTopPlayersTable(_0x503e91){const _0x19c2a7=_0x157120,_0x23adf0=document[_0x19c2a7(0x198)](_0x19c2a7(0x1a9));_0x23adf0[_0x19c2a7(0x193)]='';
+                            for(let _0x354a41=0x0;_0x354a41<_0x503e91[_0x19c2a7(0x1a7)];_0x354a41++){const _0x22959d=_0x503e91[_0x354a41],_0x2d6104='<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+(_0x354a41+0x1)+_0x19c2a7(0x1ad)+_0x22959d['name']+_0x19c2a7(0x1ad)+_0x22959d['score']+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>';_0x23adf0[_0x19c2a7(0x193)]+=_0x2d6104;
+                        }const _0x5daf73=[{'name':_0x19c2a7(0x19a),'score':0x96},{'name':'Naveen','score':0x84},{'name':'Venkatesh','score':0x4e},{'name':_0x19c2a7(0x1a0),'score':0x36}];updateTopPlayersTable(_0x5daf73);
+                    }const params=new URLSearchParams(window[_0x157120(0x195)][_0x157120(0x1a1)]),playerName=params[_0x157120(0x199)](_0x157120(0x197)),player=localStorage[_0x157120(0x19c)](_0x157120(0x1ac)),finalScore=localStorage[_0x157120(0x19c)](_0x157120(0x19e));document[_0x157120(0x198)](_0x157120(0x1ac))[_0x157120(0x192)]=player;!playerName==null&&(document[_0x157120(0x198)](_0x157120(0x1ac))[_0x157120(0x192)]=player);
+                        function _0x1625(){const _0x5c6faf=['final','playerName','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','addEventListener','7267432BcPbSX','restart','removeItem','start','_self','click','1744758bLkuom','textContent','innerHTML','8352gepbau','location','682922tscNnY','name','getElementById','get','Suneel','9kUJeGH','getItem','452LkXduu','Score','clear','Karthik','search','score','5732846iPxAsC','index.html','457137EraMCq','open','length','9511630bwpsqy','topPlayersBody','15NALrvU'];_0x1625=function(){return _0x5c6faf;};
+                            return _0x1625();
+                            }if(finalScore==null){let defaultScore=0x0;document[_0x157120(0x198)](_0x157120(0x1a2))[_0x157120(0x192)]=defaultScore,document[_0x157120(0x198)]('final')['textContent']=defaultScore;}else document[_0x157120(0x198)]('score')[_0x157120(0x192)]=finalScore,document[_0x157120(0x198)](_0x157120(0x1ab))[_0x157120(0x192)]=finalScore;
+        
+        
+    </script>
+</body>
+</html>

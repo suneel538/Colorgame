@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Game</title>
+   <link rel="stylesheet" type="text/css" href="Index.css">
+
+</head>
+<body>
+<div class="card">
+    <form name="form" onsubmit="submit_btn(); return false;">
+
+    <div class="container">
+    <h3>Welcome To The Color Game Play With Colors</h3><br>
+    
+        <label for="name">Enter your name:</label>
+        <br>
+        <input type="text" id="name" placeholder="your name here" style="text-align: center;">
+        <br>
+        <br>
+        <input type="submit" id="startgame" value="Start Game">
+
+    <br>
+</form>
+    
+    <p>Your goal is to select the correct color based on the Colour displayed. Be careful! 
+        The color of the button might be different from the actual word it spells out. 
+        Stay focused to achieve a high score!</p>
+    </div>
+</div>
+    <script>
+        function submit_btn() {
+            const playerName = document.getElementById('name').value;
+        
+            if (playerName.trim() !== "") {
+                localStorage.setItem('playerName', playerName);
+                //window.location.assign('Game_Start.html');
+                window.location.href = 'Game_Start.html';
+                // window.open('Game_Start.html');
+            } else {
+                alert('Please enter your name.');
+            }
+        }
+        
+       </script>
+       <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAewjl4ijku6x8qjQ7nBcwfdQ8FBjdTxwQ",
+          authDomain: "colorgame-suneel.firebaseapp.com",
+          projectId: "colorgame-suneel",
+          storageBucket: "colorgame-suneel.appspot.com",
+          messagingSenderId: "818895082703",
+          appId: "1:818895082703:web:c6730eddc49ccfa88453ba",
+          measurementId: "G-9RBLHTM05V"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>

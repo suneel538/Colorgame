@@ -1,0 +1,82 @@
+.scoreboard{
+    padding-left: 38%;
+    padding-right: 35%;
+  }
+  .center{
+    padding-top: 80px;
+  }
+  .name{    
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
+    .main{
+        display: flex;
+        margin: auto;
+        width: 300px;
+        height: 150px;
+        background-color: aliceblue;
+        border: 2px solid black;
+        border-radius: 7px;
+        justify-content: center;
+    }
+    .button{
+       display: flex;
+        margin: auto;
+        margin: 30px;
+        text-align: center;
+        padding-left: 35%;
+        height: 30px;
+        margin: 40px;  
+    }
+    button{
+        cursor: pointer;
+        width: 70px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 6px;
+        
+    }
+
+    #box{
+        display: flex;
+        margin: auto;
+        width: 300px;
+        height: 150px;   
+    }
+    .timer {
+        width: 100%;
+        height: 15px;
+        background-color: #ccc;
+        position: relative;
+        
+    }
+    
+    #time {
+        height: 100%;
+        background-color: #db0808;
+        transition: width 1s linear;
+        animation: timing;
+        animation-duration: 5s;
+    }
+    
+    @keyframes timing {
+        20%  { background-color: yellow; left: 20%; top: 0px; }
+        40%  { background-color: blue; left: 20%; top: 0px; }
+        60%  { background-color: green; left: 20%; top: 0px; }
+        80%  { background-color: rgb(255, 0, 157); left: 20%; top: 0px; }
+        100% { background-color: rgb(23, 175, 202); left: 20%; top: 0px; }
+    }
+    @media only screen and (min-width: 1024px) {
+        /* Desktop/laptop styles */
+    }
+    
+    /* Styles for tablets */
+    @media only screen and (max-width: 1023px) {
+        /* Tablet styles */
+    }
+    
+    /* Styles for mobile phones */
+    @media only screen and (max-width: 767px) {
+        /* Mobile styles */
+    }
