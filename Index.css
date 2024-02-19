@@ -1,6 +1,6 @@
 @media only screen and (max-width: 600px) {
     /* Adjustments for smaller screens */
-    .container {
+    .animation {
         max-width: none;
         padding: 20px; /* Reduce padding for smaller screens */
         margin-bottom: 0; /* Remove bottom margin for smaller screens */
@@ -12,7 +12,7 @@
     display: grid;
 }
 body{
-    padding-top: 100;
+    padding-top: 100px;
     text-align: center;
     display: grid;
     justify-content: center;
