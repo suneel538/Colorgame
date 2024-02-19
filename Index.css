@@ -1,11 +1,15 @@
 @media only screen and (max-width: 600px) {
+    /* Adjustments for smaller screens */
+    .container {
+        max-width: none;
+        padding: 20px; /* Reduce padding for smaller screens */
+        margin-bottom: 0; /* Remove bottom margin for smaller screens */
+        border-radius: 0; /* Remove border radius for smaller screens */
+        box-shadow: none; /* Remove box shadow for smaller screens */
+    }
 }
 .card{
-     margin: 0;
-    border: none;
     display: grid;
-     padding: 0; 
-      max-width: none;
 }
 body{
     padding-top: 100;
