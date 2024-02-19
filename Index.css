@@ -1,4 +1,10 @@
-
+@media only screen and (max-width: 600px) {
+.animation{
+    border: none; /* Remove border on smaller screens */
+    padding: 0; /* Remove padding */
+    max-width: none; /* Allow container to expand to full width */
+}
+}
 .card{
     display: grid;
 }
