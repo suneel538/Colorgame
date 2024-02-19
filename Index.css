@@ -1,18 +1,20 @@
 @media only screen and (max-width: 600px) {
 .animation{
-    border: none; /* Remove border on smaller screens */
+    /* Remove border on smaller screens */
     padding: 0; /* Remove padding */
-    max-width: none; /* Allow container to expand to full width */
+    /* Allow container to expand to full width */
 }
 }
 .card{
     display: grid;
 }
 body{
+     border: none;
     margin: 0;
-    padding-top: 100px;
+    padding-top: 0;
     text-align: center;
     display: grid;
+     max-width: none;
     justify-content: center;
 }
 .container{
