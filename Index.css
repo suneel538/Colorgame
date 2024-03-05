@@ -1,27 +1,17 @@
-@media only screen and (max-width: 600px) {
-    /* Adjustments for smaller screens */
-    .animation {
-        justify-content: center;
-        display:grid;
-        padding-top:100px;
-        max-width: none;
-        padding: 20px; /* Reduce padding for smaller screens */
-        margin-bottom: 0; /* Remove bottom margin for smaller screens */
-        border-radius: 0; /* Remove border radius for smaller screens */
-        box-shadow: none; /* Remove box shadow for smaller screens */
-    }
-}
-.card{
+.card {
     display: grid;
 }
-body{
+
+body {
+    margin: 0;
     padding-top: 100px;
     text-align: center;
     display: grid;
     justify-content: center;
 }
-.container{
-   max-width: 320px;
+
+.container {
+    max-width: 320px;
     height: 250px;
     padding: 40px;
     margin: auto;
@@ -30,11 +20,19 @@ body{
     padding-bottom: 70px;
     margin-bottom: 20px;
     border: 2px solid rgb(182, 25, 25);
-    justify-content: center;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(12, 12, 12, 0.2), 0 6px 20px 0 rgba(8, 8, 8, 0.19);
-    
 }
+
+@media (max-width: 600px) {
+    .container {
+        max-width: calc(100% - 20px);
+        padding: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 
 #startgame:hover{
     background-color:gray;
