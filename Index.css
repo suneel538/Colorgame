@@ -13,15 +13,12 @@ body {
 .container {
     max-width: 320px;
     height: 250px;
-    padding: 40px;
+    padding: 20px; 
     margin: auto;
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-bottom: 70px;
-    margin-bottom: 20px;
     border: 2px solid rgb(182, 25, 25);
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(12, 12, 12, 0.2), 0 6px 20px 0 rgba(8, 8, 8, 0.19);
+    overflow: auto; 
 }
 
 @media (max-width: 600px) {
