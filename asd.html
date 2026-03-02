@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Shuffle Game</title>
+  <style>
+    /* Add some basic styling for better presentation */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Color Shuffle Game</h1>
+
+  <p id="selectedColor">Selected Color: <span id="colorValue"></span></p>
+
+  <button onclick="">red</button>
+  <button onclick="">green</button>
+  <button onclick="">blue</button>
+  <button onclick="">Yellow</button>
+  <button onclick="">Orange</button>
+  <script>
+    // Array of colors
+    const colors = ['Red', 'Green', 'Blue', 'Yellow', 'Orange'];
+
+    // Function to shuffle the array using Fisher-Yates algorithm
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Function to handle the button click
+    function selectRandomColor() {
+      
+      shuffleArray(colors);
+      const selectedColor = colors[0];
+      document.getElementById('colorValue').innerText = selectedColor;
+      
+    }
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<html>
+<head>this head</head>
+<body>
+<script>
+    let score = 0;
+    let timeoutId;
+    
+    function runGame() {
+        clearTimeout(timeoutId);
+        
+        const colorDictionary = {
+            'Red': '#FF0000',
+        'Green': '#00FF00',
+        'Blue': '#0000FF',
+        'Yellow': '#FFFF00',
+        'Purple': '#800080',
+        'Cyan': '#00FFFF',
+        'Orange': '#FFA500',
+        'Pink': '#FFC0CB',
+        'Brown': '#A52A2A',
+        'Gray': '#808080'
+        };
+    
+        const colorList = Object.keys(colorDictionary);
+        const numRandomColors = 4;
+        const randomColors = colorList.sort(() => Math.random() - 0.5).slice(0, numRandomColors);
+    
+        console.log("Random Colors:", randomColors);
+    
+        function setButtonProperties(buttonIndex) {
+            const button = document.getElementById(`button${buttonIndex + 1}`);
+            button.textContent = randomColors[buttonIndex];
+            button.style.backgroundColor = colorDictionary[randomColors[buttonIndex]];
+        }
+    
+        for (let i = 0; i < numRandomColors; i++) {
+            setButtonProperties(i);
+        }
+    
+        const finalColor = randomColors[Math.floor(Math.random() * numRandomColors)];
+        console.log("Final Color:", finalColor);
+    
+        const finalColorCode = colorDictionary[finalColor];
+        console.log("Final Color Code:", finalColorCode);
+    
+        document.getElementById('box').style.backgroundColor = finalColorCode;
+    
+        let timeLeft = (score >= 15) ? 1 : (score >= 10) ? 2 : (score >= 5) ? 3 : 5;
+        let div = 3;
+    
+        function updateTimer() {
+            document.getElementById('timer').textContent = `Time left: ${timeLeft} seconds`;
+            const timeBar = document.getElementById('timeleft');
+            timeBar.style.width = `${(timeLeft / div) * 100}%`;
+        }
+    
+        timeoutId = setInterval(function () {
+            timeLeft--;
+            updateTimer();
+            if (timeLeft === -1) {
+                clearInterval(timeoutId);
+                gameOver();
+            }
+        }, 1000);
+    
+        return [finalColorCode, randomColors, finalColor];
+    }
+    
+    const [finalColorCode, randomColors, finalColor] = runGame();
+    
+    function updateScore() {
+        score++;
+        document.getElementById('score').textContent = `Score: ${score}`;
+        localStorage.setItem('Score', score);
+    }
+    
+    function gameOver() {
+        window.location.href = 'Game_Over.html';
+    }
+    
+    function handleClick(buttonIndex) {
+        clearInterval(timeoutId);
+    
+        if (randomColors[buttonIndex] === finalColor) {
+            console.log(`Button ${buttonIndex + 1} clicked. Color: ${randomColors[buttonIndex]}`);
+            updateScore();
+            runGame();
+        } else {
+            console.log(`Button ${buttonIndex + 1} clicked. Incorrect Color.`);
+            gameOver();
+        }
+    }
+    
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById(`button${i}`).addEventListener('click', function () {
+            handleClick(i - 1);
+        });
+    }
+    
+</script>
+</body>
+</html>
